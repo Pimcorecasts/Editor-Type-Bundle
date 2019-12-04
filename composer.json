@@ -1,0 +1,22 @@
+{
+  "name": "mercurykojo/editor-type-bundle",
+  "type": "pimcore-bundle",
+  "license": "GPL-3.0",
+  "autoload": {
+    "psr-4": {
+      "MercuryKojo\\Bundle\\EditorTypeBundle\\": ""
+    }
+  },
+  "require": {
+    "pimcore/pimcore": "^6.0",
+    "erusev/parsedown": "^1.7",
+    "erusev/parsedown-extra": "^0.7.1"
+  },
+  "extra": {
+    "pimcore": {
+      "bundles": [
+        "MercuryKojo\\Bundle\\EditorTypeBundle\\EditorTypeBundle"
+      ]
+    }
+  }
+}

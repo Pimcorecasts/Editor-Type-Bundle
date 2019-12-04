@@ -1,0 +1,11 @@
+pimcore:
+  documents:
+    tags:
+      map:
+        editortype: MercuryKojo\Bundle\EditorTypeBundle\Model\Document\Tag\EditorType
+
+  objects:
+    class_definitions:
+      data:
+        map:
+          editorType: MercuryKojo\Bundle\EditorTypeBundle\Model\DataObject\ClassDefinition\Data\EditorType
