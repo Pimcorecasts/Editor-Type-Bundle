@@ -4,11 +4,11 @@
   "license": "GPL-3.0",
   "autoload": {
     "psr-4": {
-      "MercuryKojo\\Bundle\\EditorTypeBundle\\": ""
+      "MercuryKojo\\Bundle\\EditorTypeBundle\\": "src/"
     }
   },
   "require": {
-    "pimcore/pimcore": "^6.0",
+    "pimcore/pimcore": ">=6.9",
     "erusev/parsedown": "^1.7",
     "erusev/parsedown-extra": "^0.7.1"
   },
