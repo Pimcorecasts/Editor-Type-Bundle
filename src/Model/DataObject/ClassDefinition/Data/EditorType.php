@@ -83,7 +83,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
     /**
      * @return int
      */
-    public function getHeight()
+    public function getHeight(): int
     {
         return $this->height;
     }
@@ -93,7 +93,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
      *
      * @return $this
      */
-    public function setWidth($width)
+    public function setWidth($width): static
     {
         $this->width = $this->getAsIntegerCast($width);
 
@@ -105,7 +105,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
      *
      * @return $this
      */
-    public function setHeight($height)
+    public function setHeight($height): static
     {
         $this->height = $this->getAsIntegerCast($height);
 
@@ -115,7 +115,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
     /**
      * @param string $editorConfig
      */
-    public function setEditorConfig($editorConfig)
+    public function setEditorConfig($editorConfig): void
     {
         if (is_string($editorConfig)) {
             $this->editorConfig = $editorConfig;
@@ -127,14 +127,14 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
     /**
      * @return string
      */
-    public function getEditorConfig() {
+    public function getEditorConfig(): string {
         return $this->editorConfig;
     }
 
     /**
      * @param string $editorLanguage
      */
-    public function setEditorLanguage($editorLanguage) {
+    public function setEditorLanguage($editorLanguage): void {
         if (is_string($editorLanguage)) {
             $this->editorLanguage = $editorLanguage;
         } else {
@@ -145,14 +145,14 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
     /**
      * @return string
      */
-    public function getEditorLanguage() {
+    public function getEditorLanguage(): string {
         return $this->editorLanguage;
     }
 
     /**
      * @param string $editorTheme
      */
-    public function setEditorTheme($editorTheme) {
+    public function setEditorTheme($editorTheme): void {
         if (is_string($editorTheme)) {
             $this->editorTheme = $editorTheme;
         } else {
@@ -163,7 +163,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
     /**
      * @return string
      */
-    public function getEditorTheme() {
+    public function getEditorTheme(): string {
         return $this->editorTheme;
     }
 
@@ -178,7 +178,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
     /**
      * @param bool $excludeFromSearchIndex
      */
-    public function setExcludeFromSearchIndex(bool $excludeFromSearchIndex)
+    public function setExcludeFromSearchIndex(bool $excludeFromSearchIndex): static
     {
         $this->excludeFromSearchIndex = $excludeFromSearchIndex;
 
@@ -194,7 +194,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
      *
      * @return string
      */
-    public function getDataForResource($data, $object = null, $params = [])
+    public function getDataForResource($data, $object = null, $params = []): string
     {
         return $data;
     }
@@ -208,7 +208,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
      *
      * @return string
      */
-    public function getDataFromResource($data, $object = null, $params = [])
+    public function getDataFromResource($data, $object = null, $params = []): string
     {
         return $data;
     }
@@ -222,7 +222,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
      *
      * @return string
      */
-    public function getDataForQueryResource($data, $object = null, $params = [])
+    public function getDataForQueryResource($data, $object = null, $params = []): string
     {
         $data = $this->getDataForResource($data, $object, $params);
 
@@ -244,7 +244,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
      *
      * @return string
      */
-    public function getDataForSearchIndex($object, $params = [])
+    public function getDataForSearchIndex($object, $params = []): string
     {
         if ($this->isExcludeFromSearchIndex()) {
             return '';
@@ -262,7 +262,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
      *
      * @return string
      */
-    public function getDataForEditmode($data, $object = null, $params = [])
+    public function getDataForEditmode($data, $object = null, $params = []): string
     {
         return $this->getDataForResource($data, $object, $params);
     }
@@ -276,7 +276,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
      *
      * @return string
      */
-    public function getDataFromEditmode($data, $object = null, $params = [])
+    public function getDataFromEditmode($data, $object = null, $params = []): string
     {
         return $data;
     }
@@ -290,7 +290,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
      *
      * @return array|string
      */
-    public function getDiffVersionPreview($data, $object = null, $params = [])
+    public function getDiffVersionPreview($data, $object = null, $params = []): array|string
     {
         if ($data) {
             $value = [];
@@ -320,7 +320,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
      *
      * @return Element\ElementInterface
      */
-    public function rewriteIds($object, $idMapping, $params = [])
+    public function rewriteIds($object, $idMapping, $params = []): Element\ElementInterface
     {
         $data = $this->getDataFromObjectParam($object, $params);
         $html = str_get_html($data);

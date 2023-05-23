@@ -23,7 +23,7 @@ class EditorType extends Editable
      *
      * @return string
      */
-    public function getType()
+    public function getType(): string
     {
         return 'editortype';
     }
@@ -33,7 +33,7 @@ class EditorType extends Editable
      *
      * @return mixed
      */
-    public function getData()
+    public function getData(): mixed
     {
         return $this->text;
     }
@@ -43,7 +43,7 @@ class EditorType extends Editable
      *
      * @return mixed
      */
-    public function getDataEditmode()
+    public function getDataEditmode(): mixed
     {
         /*
         $document = Model\Document::getById($this->getDocumentId());
@@ -61,7 +61,7 @@ class EditorType extends Editable
      *
      * @return string
      */
-    public function frontend()
+    public function frontend(): string
     {
         return $this->text; // TODO (pre?)
     }
@@ -73,7 +73,7 @@ class EditorType extends Editable
      *
      * @return $this
      */
-    public function setDataFromResource($data)
+    public function setDataFromResource($data): static
     {
         $this->text = $data;
 
@@ -87,7 +87,7 @@ class EditorType extends Editable
      *
      * @return $this
      */
-    public function setDataFromEditmode($data)
+    public function setDataFromEditmode($data): static
     {
         $this->text = $data;
 
@@ -97,7 +97,7 @@ class EditorType extends Editable
     /**
      * @return bool
      */
-    public function isEmpty()
+    public function isEmpty(): bool
     {
         return empty($this->text);
     }
@@ -110,7 +110,7 @@ class EditorType extends Editable
      *
      * @throws \Exception
      */
-    public function getFromWebserviceImport($wsElement, $document = null, $params = [], $idMapper = null)
+    public function getFromWebserviceImport($wsElement, $document = null, $params = [], $idMapper = null): void
     {
         $data = $this->sanitizeWebserviceData($wsElement->value);
 
@@ -138,7 +138,7 @@ class EditorType extends Editable
      *
      * @todo: no rewriteIds method ever returns anything, why this one?
      */
-    public function rewriteIds($idMapping)
+    public function rewriteIds($idMapping): ?string
     {
         $html = str_get_html($this->text);
         if (!$html) {

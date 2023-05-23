@@ -6,7 +6,7 @@ use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
 
 class EditorTypeBundle extends AbstractPimcoreBundle
 {
-    public function getJsPaths()
+    public function getJsPaths(): array
     {
         return [
             '/bundles/editortype/script.js',
@@ -18,7 +18,7 @@ class EditorTypeBundle extends AbstractPimcoreBundle
         ];
     }
 
-    public function getEditmodeJsPaths()
+    public function getEditmodeJsPaths(): array
     {
         return [
             '/bundles/editortype/script.js',
@@ -29,13 +29,14 @@ class EditorTypeBundle extends AbstractPimcoreBundle
         ];
     }
 
-    public function getCssPaths(){
+    public function getCssPaths(): array
+    {
         return [
             '/bundles/editortype/vs/editor/editor.main.css',
         ];
     }
 
-    public function getEditmodeCssPaths()
+    public function getEditmodeCssPaths(): array
     {
         return [
             '/bundles/editortype/vs/editor/editor.main.css',
