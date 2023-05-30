@@ -12,71 +12,61 @@ use Pimcore\Model\Element;
 class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implements ResourcePersistenceAwareInterface, QueryResourcePersistenceAwareInterface {
 
     use Model\DataObject\ClassDefinition\Data\Extension\Text;
+    use Model\DataObject\Traits\DataHeightTrait;
+    use Model\DataObject\Traits\DataWidthTrait;
     use Model\DataObject\Traits\SimpleComparisonTrait;
-    use Extension\ColumnType;
-    use Extension\QueryColumnType;
+    use Model\DataObject\Traits\SimpleNormalizerTrait;
 
     /**
      * @var string
      */
-    public $fieldtype = 'editorType';
-
-    /**
-     * @var int
-     */
-    public $width;
-
-    /**
-     * @var int
-     */
-    public $height;
+    public string $fieldtype = 'editorType';
 
     /**
      * Type for the column to query
      *
      * @var string
      */
-    public $queryColumnType = 'longtext';
+    public string $queryColumnType = 'longtext';
 
     /**
      * Type for the column
      *
      * @var string
      */
-    public $columnType = 'longtext';
+    public string $columnType = 'longtext';
 
     /**
      * Type for the generated phpdoc
      *
      * @var string
      */
-    public $phpdocType = 'string';
+    public string $phpdocType = 'string';
 
     /**
      * @var string
      */
-    public $editorConfig = '';
+    public string $editorConfig = '';
 
     /**
      * @var string
      */
-    public $editorLanguage = '';
+    public string $editorLanguage = '';
 
     /**
      * @var string
      */
-    public $editorTheme = '';
+    public string $editorTheme = '';
 
     /**
      * @var bool
      */
-    public $excludeFromSearchIndex = false;
+    public bool $excludeFromSearchIndex = false;
 
     /**
      * @return int
      */
-    public function getWidth()
-    {
+    public function getWidth(): int{
         return $this->width;
     }
 
@@ -196,7 +186,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
      */
     public function getDataForResource($data, $object = null, $params = []): string
     {
-        return $data;
+        return $data ?? '';
     }
 
     /**
@@ -210,7 +200,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
      */
     public function getDataFromResource($data, $object = null, $params = []): string
     {
-        return $data;
+        return $data ?? '';
     }
 
     /**
@@ -381,5 +371,17 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
     public function getPhpdocReturnType(): ?string
     {
         return 'string|null';
+    }
+
+    public function getFieldType(): string{
+        return 'wysiwyg';
+    }
+
+    public function getQueryColumnType(): array|string{
+        return $this->getColumnType();
+    }
+
+    public function getColumnType(): array|string{
+        return 'longtext';
     }
 }
