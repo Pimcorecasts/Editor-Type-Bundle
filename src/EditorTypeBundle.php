@@ -1,6 +1,6 @@
 <?php
 
-namespace MercuryKojo\Bundle\EditorTypeBundle;
+namespace Pimcorecasts\Bundle\EditorTypeBundle;
 
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
 

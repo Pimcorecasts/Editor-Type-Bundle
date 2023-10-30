@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MercuryKojo\Bundle\EditorTypeBundle\Model\DataObject\ClassDefinition\Data;
+namespace Pimcorecasts\Bundle\EditorTypeBundle\Model\DataObject\ClassDefinition\Data;
 
 use Pimcore\Model\DataObject\ClassDefinition\Data\QueryResourcePersistenceAwareInterface;
 use Pimcore\Model\DataObject\ClassDefinition\Data\ResourcePersistenceAwareInterface;

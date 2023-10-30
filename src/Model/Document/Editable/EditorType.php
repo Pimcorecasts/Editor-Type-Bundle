@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MercuryKojo\Bundle\EditorTypeBundle\Model\Document\Editable;
+namespace Pimcorecasts\Bundle\EditorTypeBundle\Model\Document\Editable;
 
 
 use Pimcore\Model\Document\Editable;

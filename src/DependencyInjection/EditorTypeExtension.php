@@ -1,6 +1,6 @@
 <?php
 
-namespace MercuryKojo\Bundle\EditorTypeBundle\DependencyInjection;
+namespace Pimcorecasts\Bundle\EditorTypeBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
