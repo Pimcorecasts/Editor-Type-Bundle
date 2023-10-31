@@ -8,7 +8,7 @@
     }
   },
   "require": {
-    "pimcore/pimcore": ">=6.9",
+    "pimcore/pimcore": ">=10.0",
     "erusev/parsedown": "^1.7",
     "erusev/parsedown-extra": "^0.7.1"
   },

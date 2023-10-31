@@ -374,7 +374,7 @@ class EditorType extends \Pimcore\Model\DataObject\ClassDefinition\Data implemen
     }
 
     public function getFieldType(): string{
-        return 'wysiwyg';
+        return 'editorType';
     }
 
     public function getQueryColumnType(): array|string{

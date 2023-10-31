@@ -42,4 +42,16 @@ class EditorTypeBundle extends AbstractPimcoreBundle
             '/bundles/editortype/vs/editor/editor.main.css',
         ];
     }
+
+    public function getVersion(): string
+    {
+        $version = '1.0';
+        if (class_exists('\\Composer\\InstalledVersions')) {
+            $version = \Composer\InstalledVersions::getVersion('pimcorecasts/editor-type-bundle');
+        } else {
+            $version = \PackageVersions\Versions::getVersion('pimcorecasts/editor-type-bundle');
+        }
+
+        return $version;
+    }
 }

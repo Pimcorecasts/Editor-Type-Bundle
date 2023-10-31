@@ -30,7 +30,7 @@ pimcore.object.classes.data.editorType = Class.create(pimcore.object.classes.dat
 
     initialize: function (treeNode, initData) {
         this.type = "editorType";
-        console.log("editorType");
+        //console.log("editorType");
 
         this.initData(initData);
 

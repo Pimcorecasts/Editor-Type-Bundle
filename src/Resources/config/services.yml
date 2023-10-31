@@ -1,0 +1,6 @@
+services:
+    # adds additional static files to admin backend
+    Pimcorecasts\Bundle\EditorTypeBundle\EventListener\AdminEventListener:
+        tags:
+            - { name: kernel.event_listener, event: pimcore.bundle_manager.paths.css, method: addCSSFiles }
+            - { name: kernel.event_listener, event: pimcore.bundle_manager.paths.js, method: addJSFiles }

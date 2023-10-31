@@ -25,7 +25,7 @@ class EditorType extends Editable
      */
     public function getType(): string
     {
-        return 'editortype';
+        return 'editorType';
     }
 
     /**
